@@ -1,0 +1,72 @@
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.day {
+    color: gray;
+}
+
+.error,
+.required {
+    color: red;
+    border-color: red;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+}
+
+.submit-btn {
+    grid-column: 3 / 4;
+    width: 50%;
+    color: white;
+    background-color: blueviolet;
+    border: 0;
+    border-radius: 15px;
+    padding: 5px;
+}
+.submit-btn:hover {
+    cursor: pointer;
+    opacity: 60%;
+    color: white;
+}
+
+.minus {
+    font-size: 50px;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.number {
+    font-size: 36px;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.result-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.name {
+    font-size: 36px;
+    font-weight: bold;
+}
