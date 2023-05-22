@@ -102,7 +102,6 @@ const AgeForm = () => {
         setConvertedAge({ years: ageYears, months: ageMonths, days: ageDays })
     }
 
-
     return (
         <>
             <div className='container'>
