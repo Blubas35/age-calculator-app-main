@@ -3,9 +3,24 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: lightgray;
+}
+
 .container {
-    max-width: 800px;
-    margin: auto;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 20px 20px 130px 20px;
+    padding: 10px;
+}
+
+.content-wrapper {
+    padding: 20px;
+}
+
+.project-title {
+    margin-top: 0;
 }
 
 .day {
@@ -23,6 +38,7 @@ form {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     place-items: center;
+    row-gap: 20px;
 }
 
 .form-control {
@@ -34,13 +50,19 @@ form {
 
 .submit-btn {
     grid-column: 3 / 4;
-    width: 50%;
+    width: 35%;
     color: white;
     background-color: blueviolet;
     border: 0;
     border-radius: 15px;
     padding: 5px;
+    background-image: url('../../assets/images/icon-arrow.svg');
+    background-repeat: no-repeat;
+    height: 125%;
+    border-radius: 50px;
+    background-position: center;
 }
+
 .submit-btn:hover {
     cursor: pointer;
     opacity: 60%;
