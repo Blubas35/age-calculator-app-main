@@ -105,65 +105,68 @@ const AgeForm = () => {
     return (
         <>
             <div className='container'>
-                <form onSubmit={formSubmitHandler}>
-                    <div className='form-control'>
-                        <label className={`${!errors.day ? 'day' : 'error'} ${!required.day ? '' : 'required'}`} htmlFor='day'>Day</label>
-                        <input className={`${!errors.day ? '' : 'error'} ${!required.day ? '' : 'required'}`} type='number' name='day' onChange={usersDayHandler} value={day}></input>
-                        {errors.day && (
-                            <span className='error'>Must be a valid day</span>
+                <div className='content-wrapper'>
+                    <h1 className='project-title'>Age Calculator</h1>
+                    <form onSubmit={formSubmitHandler}>
+                        <div className='form-control'>
+                            <label className={`${!errors.day ? 'day' : 'error'} ${!required.day ? '' : 'required'}`} htmlFor='day'>Day</label>
+                            <input className={`${!errors.day ? '' : 'error'} ${!required.day ? '' : 'required'}`} type='number' id='day' onChange={usersDayHandler} value={day}></input>
+                            {errors.day && (
+                                <span className='error'>Must be a valid day</span>
+                            )}
+                            {required.day && (
+                                <span className='required'>This field is required</span>
+                            )}
+                        </div>
+                        <div className='form-control'>
+                            <label className={`${!errors.month ? 'day' : 'error'} ${!required.month ? '' : 'required'}`} htmlFor='month'>Month</label>
+                            <input className={`${!errors.month ? '' : 'error'} ${!required.month ? '' : 'required'}`} type='number' id='month' onChange={usersMonthHandler} value={month}></input>
+                            {errors.month && (
+                                <span className='error'>Must be a valid month</span>
+                            )}
+                            {required.month && (
+                                <span className='required'>This field is required</span>
+                            )}
+                        </div>
+                        <div className='form-control'>
+                            <label className={`${!errors.year ? 'day' : 'error'} ${!required.year ? '' : 'required'} ${!yearLow ? '' : 'required'}`} htmlFor='year'>Year</label>
+                            <input className={`${!errors.year ? '' : 'error'} ${!required.year ? '' : 'required'} ${!yearLow ? '' : 'required'}`} type='number' id='year' onChange={usersYearHandler} value={year}></input>
+                            {errors.year && (
+                                <span className='error'>Must be in the past</span>
+                            )}
+                            {required.year && (
+                                <span className='required'>This field is required</span>
+                            )}
+                            {yearLow && (
+                                <span className='required'>The year must be 1900 or higher</span>
+                            )}
+                        </div>
+                        <input className='submit-btn' value='' type='submit'></input>
+                    </form>
+                    <div className='result-wrapper'>
+                        {results ? (
+                            <span className='number'>{convertedAge.years}</span>
+                        ) : (
+                            <span className='minus'>--</span>
                         )}
-                        {required.day && (
-                            <span className='required'>This field is required</span>
-                        )}
+                        <span className='name'>years</span>
                     </div>
-                    <div className='form-control'>
-                        <label className={`${!errors.month ? 'day' : 'error'} ${!required.month ? '' : 'required'}`} htmlFor='month'>Month</label>
-                        <input className={`${!errors.month ? '' : 'error'} ${!required.month ? '' : 'required'}`} type='number' name='month' onChange={usersMonthHandler} value={month}></input>
-                        {errors.month && (
-                            <span className='error'>Must be a valid month</span>
+                    <div className='result-wrapper'>
+                        {results ? (
+                            <span className='number'>{convertedAge.months}</span>
+                        ) : (
+                            <span className='minus'>--</span>
                         )}
-                        {required.month && (
-                            <span className='required'>This field is required</span>
-                        )}
+                        <span className='name'>months</span>
                     </div>
-                    <div className='form-control'>
-                        <label className={`${!errors.year ? 'day' : 'error'} ${!required.year ? '' : 'required'} ${!yearLow ? '' : 'required'}`} htmlFor='year'>Year</label>
-                        <input className={`${!errors.year ? '' : 'error'} ${!required.year ? '' : 'required'} ${!yearLow ? '' : 'required'}`} type='number' name='year' onChange={usersYearHandler} value={year}></input>
-                        {errors.year && (
-                            <span className='error'>Must be in the past</span>
+                    <div className='result-wrapper'>
+                        {results ? (
+                            <span className='number'>{convertedAge.days}</span>
+                        ) : (
+                            <span className='minus'>--</span>
                         )}
-                        {required.year && (
-                            <span className='required'>This field is required</span>
-                        )}
-                        {yearLow && (
-                            <span className='required'>The year must be 1900 or higher</span>
-                        )}
+                        <span className='name'>days</span>
                     </div>
-                    <input className='submit-btn' value='Submit' type='submit'></input>
-                </form>
-                <div className='result-wrapper'>
-                    {results ? (
-                        <span className='number'>{convertedAge.years}</span>
-                    ) : (
-                        <span className='minus'>--</span>
-                    )}
-                    <span className='name'>years</span>
-                </div>
-                <div className='result-wrapper'>
-                    {results ? (
-                        <span className='number'>{convertedAge.months}</span>
-                    ) : (
-                        <span className='minus'>--</span>
-                    )}
-                    <span className='name'>months</span>
-                </div>
-                <div className='result-wrapper'>
-                    {results ? (
-                        <span className='number'>{convertedAge.days}</span>
-                    ) : (
-                        <span className='minus'>--</span>
-                    )}
-                    <span className='name'>days</span>
                 </div>
             </div >
 
