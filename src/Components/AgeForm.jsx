@@ -110,7 +110,7 @@ const AgeForm = () => {
                     <form onSubmit={formSubmitHandler}>
                         <div className='form-control'>
                             <label className={`${!errors.day ? 'day' : 'error'} ${!required.day ? '' : 'required'}`} htmlFor='day'>Day</label>
-                            <input className={`${!errors.day ? '' : 'error'} ${!required.day ? '' : 'required'}`} type='number' id='day' onChange={usersDayHandler} value={day}></input>
+                            <input className={`${!errors.day ? '' : 'error'} ${!required.day ? '' : 'required'}`} type='number' id='day' placeholder='D' onChange={usersDayHandler} value={day}></input>
                             {errors.day && (
                                 <span className='error'>Must be a valid day</span>
                             )}
@@ -120,7 +120,7 @@ const AgeForm = () => {
                         </div>
                         <div className='form-control'>
                             <label className={`${!errors.month ? 'day' : 'error'} ${!required.month ? '' : 'required'}`} htmlFor='month'>Month</label>
-                            <input className={`${!errors.month ? '' : 'error'} ${!required.month ? '' : 'required'}`} type='number' id='month' onChange={usersMonthHandler} value={month}></input>
+                            <input className={`${!errors.month ? '' : 'error'} ${!required.month ? '' : 'required'}`} type='number' id='month' placeholder='M' onChange={usersMonthHandler} value={month}></input>
                             {errors.month && (
                                 <span className='error'>Must be a valid month</span>
                             )}
@@ -130,7 +130,7 @@ const AgeForm = () => {
                         </div>
                         <div className='form-control'>
                             <label className={`${!errors.year ? 'day' : 'error'} ${!required.year ? '' : 'required'} ${!yearLow ? '' : 'required'}`} htmlFor='year'>Year</label>
-                            <input className={`${!errors.year ? '' : 'error'} ${!required.year ? '' : 'required'} ${!yearLow ? '' : 'required'}`} type='number' id='year' onChange={usersYearHandler} value={year}></input>
+                            <input className={`${!errors.year ? '' : 'error'} ${!required.year ? '' : 'required'} ${!yearLow ? '' : 'required'}`} type='number' placeholder='YYYY' id='year' onChange={usersYearHandler} value={year}></input>
                             {errors.year && (
                                 <span className='error'>Must be in the past</span>
                             )}
